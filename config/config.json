@@ -1,0 +1,14 @@
+{
+  "config":
+  {
+    "stg": {
+      "url": "https://automationexercise.com/"
+    },
+    "prod": {
+      "url": "https://prod.automationexercise.com/"
+    },
+    "dev": {
+      "url": "https://dev.automationexercise.com/"
+    }
+  }
+}

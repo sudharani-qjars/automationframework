@@ -1,0 +1,5 @@
+INFO     config_reader:config_reader.py:11 Initialising the config data with file D:\Python_SDET_2\automationframework\config\config.json
+INFO     config_reader:config_reader.py:21 Loaded data from D:\Python_SDET_2\automationframework\config\config.json
+DEBUG    asyncio:proactor_events.py:631 Using proactor: IocpProactor
+INFO     data_reader:data_reader.py:11 Initialising the test data with file D:\Python_SDET_2\automationframework\testdata\data.json
+INFO     data_reader:data_reader.py:21 Loaded data from D:\Python_SDET_2\automationframework\testdata\data.json

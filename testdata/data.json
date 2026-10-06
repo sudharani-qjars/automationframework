@@ -1,0 +1,40 @@
+{"stg":
+{
+"login": {
+"name": "Rajesh",
+  "email": "rajesh.qjars448@gmail.com"
+},
+  "signup":{
+    "title": "Mr",
+    "password": "admin@1234",
+    "day": 1,
+    "month": "June",
+    "year": 2020,
+    "gender": "Male",
+    "first_name": "Rajesh",
+    "last_name": "Kumar",
+    "company_name": "ABC Corp",
+    "address": "123 Main St",
+    "address2": "same as above",
+    "country": "India",
+    "state": "California",
+    "city": "Los Angeles",
+    "zip_code": "90001",
+    "mobile_number": "9845999866"
+}
+},
+  "prod":
+{
+"signup": {
+"name": "Rajesh",
+  "email": "rajesh.qjars@gmail.com"
+}
+},
+  "dev":
+{
+"signup": {
+"name": "Rajesh",
+  "email": "rajesh.qjars@gmail.com"
+}
+}
+}
