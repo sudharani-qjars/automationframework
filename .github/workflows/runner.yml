@@ -1,0 +1,67 @@
+name: UI Tests
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  ui-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.12"]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Verify Chrome
+        run: |
+          google-chrome --version
+
+      - name: Check browser versions
+        run: |
+            google-chrome --version
+            chromedriver --version || true
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Upgrade pip
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Install Dependencies
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+      - name: Install Pytest
+        run: |
+          pip install pytest pytest-html pytest-xdist requests
+
+      - name: Run UI Tests
+        run: |
+          pytest -v
+
+      - name: Generate HTML Report
+        if: always()
+        run: |
+          pytest --html=reports/report.html --self-contained-html || true
+
+      - name: Upload Test Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-report
+          path: reports/
