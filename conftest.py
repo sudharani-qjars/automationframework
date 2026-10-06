@@ -50,7 +50,7 @@ def driver(load_env, config_data_reader):
             "webkit": p.webkit,
         }
         browser_type = browser_map.get(browser_name, p.chromium)
-        browser = browser_type.launch(headless=False)
+        browser = browser_type.launch(headless=True)
         page = browser.new_page()
         page.set_default_timeout(15000)
         page.goto(config_data_reader.get("url"))
